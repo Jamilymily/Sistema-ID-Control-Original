@@ -255,11 +255,12 @@ class Visitante:
     print(f"Nome: {self.__nome}\nCPF:{self.__cpf}\n Idade:{self.__idade}\n Documento:{self.__documento}")
     print("*=*"*6)
 
-
-
-
-
-
+class Catraca:
+  def __init__ (self, senha, biometria, cartao, faceID):
+    self.__senha = senha
+    self.__biometria = biometria
+    self.__cartao = cartao
+    self.faceID = faceID
 
 class Relatorio:
   def __init__(self, idRelatorio, tipoRelatorio, dataEntrada, dataSaida):
@@ -267,7 +268,5 @@ class Relatorio:
     self.__tipoRelatorio = tipoRelatorio
     self.__dataEntrada = dataEntrada
     self.__dataSaida = dataSaida
-
- def exibir
 
     
