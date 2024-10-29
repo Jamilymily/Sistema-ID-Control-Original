@@ -13,6 +13,18 @@ class UsuarioIFRO(ABC):
     self.__matricula = matricula
     self.__senha=senha
 
+  def get_nome(self):
+    return self.__nome 
+
+  def get_cpf(self):
+    return self.__cpf
+
+  def get_matricula(self):
+    return self.__matricula
+
+  def get_senha(self):
+    return self.__senha
+
   def criar_senha (self):
     self.__senha = int(input("Digite sua senha: "))
     return self.__senha
@@ -28,6 +40,9 @@ class Aluno(UsuarioIFRO):
   def __init__(self, nome, cpf, matricula, senha, turma):
     super().__init__(nome,cpf,senha, matricula)
     self.__turma=turma
+
+  def get_turma(self):
+    return self.__turma
 
 #Função cadastrar Aluno:
   def cadastrar_aluno(self):
@@ -121,6 +136,9 @@ class Servidor (UsuarioIFRO):
     super().__init__(nome,cpf,senha,matricula)
     self.__departamento=departamento
 
+  def get_departamento(self):
+    return self.__departamento
+
   def cadastrar_servidor(self):
     time.sleep(1)
     print("Cadastro Servidor, dados necessarios:\n\n01-Nome\n02-Matricula\n03 Departamento\n04-CPF\n05-Senha\n\n")
@@ -208,6 +226,18 @@ class Visitante:
     self.__cpf=cpf
     self.__idade= idade
     self.__documento=documento
+
+  def get_nome(self):
+    return self.__nome
+
+  def get_cpf(self):
+    return self.__cpf
+
+  def get_idade(self):
+    return self.__idade
+
+  def get_documento(self):
+    return self.__documento
     
   def cadastrar_visitante(self):
     self.__nome=input("Digite seu nome:")
@@ -261,6 +291,18 @@ class Catraca:
     self.__biometria = biometria
     self.__cartao = cartao
     self.faceID = faceID
+    
+  def get_senha(self):
+    return self.__senha
+    
+  def get_biometria(self):
+    return self.__biometria
+    
+  def get_cartao(self):
+    return self.__cartao
+    
+  def get_faceID(self):
+    self.__faceID
 
 class Relatorio:
   def __init__(self, idRelatorio, tipoRelatorio, dataEntrada, dataSaida):
@@ -268,5 +310,15 @@ class Relatorio:
     self.__tipoRelatorio = tipoRelatorio
     self.__dataEntrada = dataEntrada
     self.__dataSaida = dataSaida
-
     
+  def get_idRelatorio(self):
+    return self.__idRelatorio
+    
+  def get_tipoRelatorio(self):
+    return self.__tipoRelatorio
+    
+  def get_dataEntrada(self):
+    return self.__dataEntrada
+    
+  def get_dataSaida(self):
+    return self.__dataSaida
