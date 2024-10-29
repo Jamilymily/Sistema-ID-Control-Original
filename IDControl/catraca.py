@@ -254,3 +254,20 @@ class Visitante:
     print("*=*"*6)
     print(f"Nome: {self.__nome}\nCPF:{self.__cpf}\n Idade:{self.__idade}\n Documento:{self.__documento}")
     print("*=*"*6)
+
+
+
+
+
+
+
+class Relatorio:
+  def __init__(self, idRelatorio, tipoRelatorio, dataEntrada, dataSaida):
+    self.__idRelatorio = idRelatorio
+    self.__tipoRelatorio = tipoRelatorio
+    self.__dataEntrada = dataEntrada
+    self.__dataSaida = dataSaida
+
+ def exibir
+
+    
