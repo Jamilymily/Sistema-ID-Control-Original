@@ -88,7 +88,7 @@ class Aluno(UsuarioIFRO):
     print(f"Nome: {self.__nome}\nCPF:{self.__cpf}\nMatricula: {self.__matricula}\nSenha:{self.__senha}\nTurma:{self.__turma}")
 
 #Função para atualizar a turma do aluno set:
-  def atualizar_turma(self):
+  def set_turma(self):
     while True:
       resposta = input(f"\n{self.__nome},deseja atualizar sua turma?\n\n[A] Sim\n[B] Não\nResposta: ")
       print("*=*="*6)
