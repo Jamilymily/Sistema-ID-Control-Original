@@ -114,7 +114,7 @@ class Aluno(UsuarioIFRO):
 
 #Apresentação - Ana Andrade
 #Subclasse Servidor
-class Servidor (Pessoa):
+class Servidor (UsuarioIFRO):
   def __init__ (self,nome,cpf,senha,matricula,departamento):
     super().__init__(nome,cpf,senha,matricula)
     self.__departamento=departamento
@@ -178,7 +178,7 @@ class Servidor (Pessoa):
     print("*=*"*6)
 
 #Set escolha do usuário para troca de departamento
-  def atualizar_departamento(self):
+  def set_departamento(self):
     while True:
       atualiza = input(f"{self.__nome}, deseja atualizar seu departamento?\n\n[A]Sim\n[B]Não\n\nResposta: ")
       if atualiza.upper() == "A":
