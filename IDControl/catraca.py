@@ -217,6 +217,23 @@ class Servidor (UsuarioIFRO):
         print("Resposta inválida. Por favor, escolha [A] para sim ou [B] para não.")
         break
 
+class Recepcionista(Servidor):
+  def __init__ (self,nome,cpf,senha,matricula,departamento):
+  super().__init__(nome,cpf,senha,matricula, departamento)
+  
+  def liberarVisitante(self):
+    while True:
+      liberar = int(input("Deseja liberar visitante? SIM [1] ou NÃO [2]")):
+      if liberar == 1:
+        print("Acesso liberado!")
+        break
+      elif liberar == 2:
+        print("Acesso negado!")
+        break
+      else:
+        print("Tente novamente")
+        continue
+  
 #Apresentação - Alice
 class Visitante:
   import time
@@ -285,14 +302,10 @@ class Visitante:
     print("*=*"*6)
 
 class Catraca:
-  def __init__ (self, senha, biometria, cartao, faceID):
-    self.__senha = senha
+  def __init__ (self, biometria, cartao, faceID):
     self.__biometria = biometria
     self.__cartao = cartao
     self.faceID = faceID
-    
-  def get_senha(self):
-    return self.__senha
     
   def get_biometria(self):
     return self.__biometria
