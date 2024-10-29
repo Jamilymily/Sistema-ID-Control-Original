@@ -4,6 +4,8 @@ from abc import ABC
 #Apresentação - Alice
 #Superclasse abstrata(UsuarioIFRO):
 
+#Usuario(IFRO) é uma superclasse pois herda seus atributos para duas subclasses: Aluno, Servidor. (processo nomeado de Herança)
+#além disso, ela é uma classe abstrata pois não pode instanciar objetos, ou seja, não existe um "UsuarioIFRO do tipo UsuarioIFRO"
 class UsuarioIFRO(ABC):
   def __init__(self,nome,cpf, matricula, senha):
     self.__nome= nome
@@ -21,7 +23,7 @@ class UsuarioIFRO(ABC):
     print("Senha alterada com sucesso")
 
 #Apresentação - Jamily
-#Subclasse Aluno:
+#Aluno é subclasse de de UsuarioIFRO pois HERDA seus atributos (herança)
 class Aluno(UsuarioIFRO):
   def __init__(self, nome, cpf, matricula, senha, turma):
     super().__init__(nome,cpf,senha, matricula)
