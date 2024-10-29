@@ -322,3 +322,7 @@ class Relatorio:
     
   def get_dataSaida(self):
     return self.__dataSaida
+
+class Recipicionista:
+  def__init(self, nome, cpf, senha,matricula, departamento)             
+    
