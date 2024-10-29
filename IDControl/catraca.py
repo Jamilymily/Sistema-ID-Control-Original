@@ -217,7 +217,6 @@ class Servidor (UsuarioIFRO):
         print("Resposta inválida. Por favor, escolha [A] para sim ou [B] para não.")
         break
 
-
 #Apresentação - Alice
 class Visitante:
   import time
