@@ -2,9 +2,9 @@ import time
 from abc import ABC
 
 #Apresentação - Alice
-#Superclasse abstrata(Pessoa):
+#Superclasse abstrata(UsuarioIFRO):
 
-class Pessoa(ABC):
+class UsuarioIFRO(ABC):
   def __init__(self,nome,cpf, matricula, senha):
     self.__nome= nome
     self.__cpf=cpf
@@ -22,7 +22,7 @@ class Pessoa(ABC):
 
 #Apresentação - Jamily
 #Subclasse Aluno:
-class Aluno(Pessoa):
+class Aluno(UsuarioIFRO):
   def __init__(self, nome, cpf, matricula, senha, turma):
     super().__init__(nome,cpf,senha, matricula)
     self.__turma=turma
