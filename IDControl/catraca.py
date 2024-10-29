@@ -317,11 +317,12 @@ class Catraca:
     self.__faceID
 
 class Relatorio:
-  def __init__(self, idRelatorio, tipoRelatorio, dataEntrada, dataSaida):
+  def __init__(self, idRelatorio, tipoRelatorio, dataEntrada, dataSaida, quantVisitantes):
     self.__idRelatorio = idRelatorio
     self.__tipoRelatorio = tipoRelatorio
     self.__dataEntrada = dataEntrada
     self.__dataSaida = dataSaida
+    self.__quantVisitantes = quantVisitantes
     
   def get_idRelatorio(self):
     return self.__idRelatorio
@@ -334,7 +335,7 @@ class Relatorio:
     
   def get_dataSaida(self):
     return self.__dataSaida
-
-class Recipicionista:
-  def__init(self, nome, cpf, senha,matricula, departamento)             
+    
+  def get_quantVisitantes(self):
+    return self.__quantVisitantes
     
