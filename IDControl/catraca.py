@@ -115,7 +115,7 @@ class Aluno(UsuarioIFRO):
 
 
 #Apresentação - Ana Andrade
-#Subclasse Servidor
+#Servidor é subclasse de UsuarioIFRO pois HERDA seus atributos (herança)
 class Servidor (UsuarioIFRO):
   def __init__ (self,nome,cpf,senha,matricula,departamento):
     super().__init__(nome,cpf,senha,matricula)
