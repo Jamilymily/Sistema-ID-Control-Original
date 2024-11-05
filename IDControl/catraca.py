@@ -222,6 +222,7 @@ class Recepcionista(Servidor):
     # Aqui usamos super() para chamar o construtor da classe base (Servidor),
     # que inicializa os atributos nome, cpf, senha, matricula e departamento
   super().__init__(nome,cpf,senha,matricula, departamento)
+  
   # Método específico de Recepcionista para liberar visitantes
   def liberarVisitante(self):
   # Pergunta ao recepcionista se ele deseja liberar ou negar o acesso a um visitante
@@ -238,6 +239,9 @@ class Recepcionista(Servidor):
         continue
   
 #Apresentação - Alice
+#  A classe Visitante tem uma relação de associação com a Classe Recepcionista.
+# No entanto, ela é independente e não acessa as funções da catraca, como senha e matrícula.
+  
 class Visitante:
   import time
   def __init__(self,nome,cpf, idade,documento):
@@ -304,8 +308,9 @@ class Visitante:
     print(f"Nome: {self.__nome}\nCPF:{self.__cpf}\n Idade:{self.__idade}\n Documento:{self.__documento}")
     print("*=*"*6)
 
-#Classe que gerencia o cadastro de visitantes, sem relação com sistemas de controle de acesso
-#como catracas ou dados de alunos/servidores. É uma classe independente
+#Classe Catraca tem relação de associação com UsuarioIfro e Relatório
+#UsuarioIfro(no acesso dos alunos pelos dado
+
 class Catraca:
   def __init__ (self, biometria, cartao, faceID):
     self.__biometria = biometria
