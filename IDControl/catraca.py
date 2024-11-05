@@ -320,7 +320,7 @@ class Catraca:
     
   def get_faceID(self):
     self.__faceID
-
+# Colocar a importaân da classe e a relaçaõ
 from datetime import date, time
 class Relatorio:
   def __init__(self, id, tipo, dataEntrada, dataSaida=None, visitantes=0):
@@ -346,7 +346,6 @@ class Relatorio:
     return self.__Visitantes
 
 # Função para exibir o Relatório
-
 def exibirRelatorio(self):
   print(f"ID:{self.__id}")
   print(f"Tipo:{self.__tipo}")
