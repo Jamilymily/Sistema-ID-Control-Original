@@ -216,12 +216,15 @@ class Servidor (UsuarioIFRO):
       else:
         print("Resposta inválida. Por favor, escolha [A] para sim ou [B] para não.")
         break
-
+# O construtor da classe Recepcionista herda o comportamento do construtor de Servidor
 class Recepcionista(Servidor):
   def __init__ (self,nome,cpf,senha,matricula,departamento):
+    # Aqui usamos super() para chamar o construtor da classe base (Servidor),
+    # que inicializa os atributos nome, cpf, senha, matricula e departamento
   super().__init__(nome,cpf,senha,matricula, departamento)
-  
+  # Método específico de Recepcionista para liberar visitantes
   def liberarVisitante(self):
+  # Pergunta ao recepcionista se ele deseja liberar ou negar o acesso a um visitante
     while True:
       liberar = int(input("Deseja liberar visitante? SIM [1] ou NÃO [2]")):
       if liberar == 1:
@@ -301,6 +304,8 @@ class Visitante:
     print(f"Nome: {self.__nome}\nCPF:{self.__cpf}\n Idade:{self.__idade}\n Documento:{self.__documento}")
     print("*=*"*6)
 
+#Classe que gerencia o cadastro de visitantes, sem relação com sistemas de controle de acesso
+#como catracas ou dados de alunos/servidores. É uma classe independente
 class Catraca:
   def __init__ (self, biometria, cartao, faceID):
     self.__biometria = biometria
@@ -316,19 +321,20 @@ class Catraca:
   def get_faceID(self):
     self.__faceID
 
+from datetime import date, time
 class Relatorio:
-  def __init__(self, idRelatorio, tipoRelatorio, dataEntrada, dataSaida, quantVisitantes):
-    self.__idRelatorio = idRelatorio
-    self.__tipoRelatorio = tipoRelatorio
+  def __init__(self, id, tipo, dataEntrada, dataSaida=None, visitantes=0):
+    self.__id= id
+    self.__tipo= tipo
     self.__dataEntrada = dataEntrada
     self.__dataSaida = dataSaida
-    self.__quantVisitantes = quantVisitantes
+    self.__Visitantes = visitantes
     
   def get_idRelatorio(self):
-    return self.__idRelatorio
+    return self.__id
     
   def get_tipoRelatorio(self):
-    return self.__tipoRelatorio
+    return self.__tipo
     
   def get_dataEntrada(self):
     return self.__dataEntrada
@@ -337,5 +343,22 @@ class Relatorio:
     return self.__dataSaida
     
   def get_quantVisitantes(self):
-    return self.__quantVisitantes
+    return self.__Visitantes
+
+# Função para exibir o Relatório
+
+def exibirRelatorio(self):
+  print(f"ID:{self.__id}")
+  print(f"Tipo:{self.__tipo}")
+  print(f"Tipo:{self.__dataEntrada.strftime('%Y-%m-%d %H:%M:%S')}")
+if self.__dataSaida:  # Se a saída foi registrada
+   print(f"Saída: {self.__dataSaida.strftime('%Y-%m-%d %H:%M:%S')}")
+else:
+  print("Saída: Não registrada.")
+  print(f"Visitantes: {self.__visitantes}")
+
+ # Função para registrar a saída
+def registrar_saida(self, saida):
+  self.__saida = saida
+  
     
